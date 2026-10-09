@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jose Naicipa · Ecommerce + IA</title>
+<meta name="description" content="De dropshipping a marca propia, con un sistema y con la IA trabajando para ti. Haz tu diagnóstico gratuito: 4 preguntas, 2 minutos.">
+<meta property="og:title" content="Jose Naicipa · Ecommerce + IA">
+<meta property="og:description" content="De dropshipping a marca propia, con un sistema y con la IA trabajando para ti.">
+<meta property="og:image" content="img/vsl-miniatura.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234F46E5'/%3E%3Cstop offset='1' stop-color='%230E7490'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='800' font-size='26' fill='white' text-anchor='middle'%3EJN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Schibsted+Grotesk:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#07080D}
+a{color:#22D3EE}a:hover{color:#A5F3FC}
+.pg{--bg:#07080D;--bg2:#0B0D15;--card:#10121B;--ink:#F4F6FF;--mut:rgba(244,246,255,.68);--dim:rgba(244,246,255,.54);--line:rgba(244,246,255,.10);--acc:#6366F1;--glow:#22D3EE;
+  container-type:inline-size;container-name:pg;position:relative;background:var(--bg);color:var(--ink);font-family:'Schibsted Grotesk',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip;min-height:100vh}
+.pg *{box-sizing:border-box}
+.pg h1,.pg h2,.pg h3,.disp{font-family:'Sora','Schibsted Grotesk',sans-serif;font-weight:800;letter-spacing:-.045em;line-height:1.02;text-wrap:balance;margin:0}
+.pg p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px;position:relative;z-index:3}
+.sec{position:relative;padding:130px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:700 12px/1 'Schibsted Grotesk',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--glow)}
+.eyebrow::before{content:'';width:22px;height:1px;background:var(--glow)}
+.h2{font-size:58px}
+.lead{color:var(--mut);font-size:19px;max-width:640px}
+.lead b,.hl{color:var(--ink);font-weight:700}
+.glowtxt{color:var(--glow);font-weight:600}
+
+/* atmosphere */
+.atm{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);animation:drift 20s ease-in-out infinite;opacity:.55}
+.b1{width:620px;height:620px;background:radial-gradient(circle,#4F46E5,transparent 65%);top:-160px;left:-180px}
+.b2{width:560px;height:560px;background:radial-gradient(circle,#0891B2,transparent 65%);top:120px;right:-200px;animation-duration:24s;animation-delay:-6s}
+.b3{width:520px;height:520px;background:radial-gradient(circle,#4338CA,transparent 65%);bottom:-200px;left:30%;animation-duration:22s;opacity:.35}
+@keyframes drift{50%{transform:translate(-4%,3%) scale(1.08)}}
+.grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 10%,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 10%,transparent 75%);opacity:.5}
+.guides{position:absolute;inset:0;max-width:1200px;margin:0 auto;border-left:1px solid var(--line);border-right:1px solid var(--line);pointer-events:none;z-index:1;opacity:.6}
+.mesh{position:absolute;inset:0;width:100%;height:100%;opacity:.75}
+
+/* buttons */
+.btn{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;border:none;cursor:pointer;text-decoration:none;font:800 15px/1.2 'Schibsted Grotesk',sans-serif;letter-spacing:.02em;padding:16px 28px;min-height:48px;background:var(--ink);color:var(--bg);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s}
+.btn svg{transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.btn-acc{background:linear-gradient(100deg,#4F46E5 0%,#4338CA 45%,#0E7490 100%);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 14px 40px -12px rgba(99,102,241,.8),0 0 0 1px rgba(34,211,238,.25)}
+.btn-acc:hover{color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid rgba(244,246,255,.22)}
+.btn-ghost:hover{color:var(--ink)}
+.btn-lg{padding:20px 38px;font-size:17px;min-height:60px}
+.btn-sm{padding:10px 18px;font-size:13px;min-height:44px}
+.shine::after{content:'';position:absolute;top:-30%;bottom:-30%;left:-70%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-22deg);opacity:0;pointer-events:none}
+@media (hover:hover){.shine:hover::after{animation:sweep .95s cubic-bezier(.22,1,.36,1)}.btn:hover{transform:translateY(-2px)}.btn:hover svg{transform:translateX(3px)}}
+@keyframes sweep{0%{left:-70%;opacity:1}100%{left:135%;opacity:1}}
+
+/* glass + text fx */
+.glass{background:linear-gradient(180deg,rgba(244,246,255,.05),rgba(244,246,255,.015));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:inset 0 1px 1px rgba(255,255,255,.08),0 30px 80px -40px rgba(0,0,0,.9);position:relative;overflow:hidden;border-radius:24px}
+.glass::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1.2px;background:linear-gradient(180deg,rgba(165,180,252,.45),rgba(244,246,255,.12) 22%,transparent 42%,transparent 60%,rgba(34,211,238,.12) 80%,rgba(34,211,238,.35));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.shiny{background-image:linear-gradient(90deg,var(--ink) 15%,var(--glow) 30%,#818CF8 45%,var(--glow) 58%,var(--ink) 75%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:shiny 6s linear infinite}
+@keyframes shiny{0%{background-position:200% center}100%{background-position:-200% center}}
+.light{font-weight:400;color:var(--mut)}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:999px;font-size:13px;font-weight:600;color:var(--mut)}
+.pill .tag{background:linear-gradient(100deg,#4F46E5,#0E7490);color:#fff;font-weight:800;letter-spacing:.12em;font-size:11px;padding:6px 11px;border-radius:999px}
+
+/* sticky bar */
+.bar{position:sticky;top:0;z-index:60;background:rgba(7,8,13,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1200px;margin:0 auto;padding:8px 32px;display:flex;align-items:center;justify-content:center;gap:18px;font-size:14px}
+.dot{width:9px;height:9px;border-radius:50%;background:#F43F5E;box-shadow:0 0 0 0 rgba(244,63,94,.7);animation:red 1.6s infinite;flex:none}
+@keyframes red{70%{box-shadow:0 0 0 10px rgba(244,63,94,0)}100%{box-shadow:0 0 0 0 rgba(244,63,94,0)}}
+.clock{font:800 15px/1 'Sora',monospace;letter-spacing:.04em;color:var(--ink);font-variant-numeric:tabular-nums}
+.clock span{color:var(--glow)}
+.prog{position:absolute;left:0;bottom:-1px;height:2px;background:linear-gradient(90deg,#6366F1,#22D3EE);box-shadow:0 0 12px #22D3EE}
+
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.logo-mark{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,#4F46E5,#0E7490);font:800 15px/1 'Sora',sans-serif;color:#fff;letter-spacing:-.04em}
+.logo-t{font:800 17px/1.1 'Sora',sans-serif;letter-spacing:-.03em}
+.logo-t small{display:block;font:600 11px/1.3 'Schibsted Grotesk',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.nav-l{display:flex;gap:30px}
+.nav-l a{color:var(--mut);text-decoration:none;font-size:15px;font-weight:500}
+.nav-l a:hover{color:var(--ink)}
+
+/* hero */
+.hero{position:relative;padding:60px 0 110px;text-align:center}
+.hero h1{font-size:76px;max-width:1040px;margin:26px auto 0}
+.hero .lead{margin:26px auto 0;max-width:720px;font-size:20px}
+.vsl{margin:52px auto 0;max-width:960px;border-radius:28px;padding:10px}
+.vsl-in{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#000}
+.vsl-in img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.85) brightness(.55) blur(.6px);transform:scale(1.02)}
+.vsl-sh{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(7,8,13,0) 30%,rgba(7,8,13,.75)),linear-gradient(180deg,rgba(79,70,229,.18),rgba(14,116,144,.25))}
+.vsl-tag{position:absolute;top:18px;left:18px;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:8px 13px;border-radius:999px;background:rgba(7,8,13,.6);backdrop-filter:blur(8px);border:1px solid var(--line)}
+.vsl-time{position:absolute;top:18px;right:18px;font-size:13px;font-weight:700;padding:8px 13px;border-radius:999px;background:rgba(7,8,13,.6);border:1px solid var(--line)}
+.play{position:absolute;left:50%;top:50%;width:104px;height:104px;margin:-52px 0 0 -52px;border-radius:50%;border:none;cursor:pointer;display:grid;place-items:center;background:linear-gradient(135deg,#4F46E5,#0E7490);color:#fff;box-shadow:0 0 0 0 rgba(34,211,238,.6),0 20px 60px -10px rgba(99,102,241,.9);animation:pulse 2s infinite}
+.play svg{margin-left:6px}
+@keyframes pulse{70%{box-shadow:0 0 0 30px rgba(34,211,238,0),0 20px 60px -10px rgba(99,102,241,.9)}100%{box-shadow:0 0 0 0 rgba(34,211,238,0),0 20px 60px -10px rgba(99,102,241,.9)}}
+.vsl-cap{position:absolute;left:24px;right:24px;bottom:22px;display:flex;align-items:center;gap:14px;font-size:13px;color:var(--mut)}
+.vsl-track{flex:1;height:4px;border-radius:4px;background:rgba(244,246,255,.16);overflow:hidden}
+.vsl-track i{display:block;height:100%;width:30%;background:linear-gradient(90deg,#6366F1,#22D3EE);animation:load 6s ease-in-out infinite}
+@keyframes load{0%{width:4%}100%{width:38%}}
+.vsl-ph{position:absolute;bottom:58px;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);white-space:nowrap}
+.hero-cta{margin-top:42px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.micro{font-size:14px;color:var(--dim);display:flex;align-items:center;gap:8px}
+.learn{margin:56px auto 0;max-width:1040px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;text-align:left}
+.learn-h{grid-column:1/-1;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);text-align:center;margin-bottom:6px}
+.li{padding:18px 18px;border-radius:18px;display:flex;gap:12px;font-size:15px;line-height:1.45;color:var(--mut)}
+.ico{flex:none;width:36px;height:36px;border-radius:11px;display:grid;place-items:center;color:var(--glow);background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.22)}
+
+/* metrics */
+.metrics{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(16,18,27,.6),rgba(7,8,13,.2));position:relative;z-index:3}
+.mrow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.m{padding:44px 28px;border-left:1px solid var(--line)}
+.m:first-child{border-left:none}
+.m b{display:block;font:800 60px/1 'Sora',sans-serif;letter-spacing:-.05em}
+.m b small{font-size:22px;color:var(--glow);margin-left:2px;letter-spacing:-.02em}
+.m span{display:block;margin-top:12px;color:var(--mut);font-size:15px;line-height:1.45}
+.forbes{text-align:center;padding:18px 0 22px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);border-top:1px solid var(--line)}
+
+/* problem */
+.two{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:start}
+.cards2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card{padding:30px;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+@media (hover:hover){.card:hover{transform:translateY(-6px)}}
+.card .num{font:800 13px/1 'Sora',sans-serif;color:var(--glow);letter-spacing:.1em}
+.card h3{font-size:24px;margin:18px 0 10px;letter-spacing:-.03em}
+.card p{color:var(--mut);font-size:16px}
+.quote{margin-top:44px;padding:34px 38px;border-radius:24px}
+.quote p{font:700 26px/1.3 'Sora',sans-serif;letter-spacing:-.03em}
+.quote cite{display:block;margin-top:14px;font-style:normal;color:var(--glow);font-weight:700;font-size:15px}
+
+/* AI agents */
+.ai{background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(79,70,229,.18),transparent 70%),var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
+.ai-head{text-align:center;max-width:900px;margin:0 auto}
+.ai-head .lead{margin:24px auto 0}
+.panel{margin-top:64px;padding:26px;border-radius:30px}
+.panel-top{display:flex;align-items:center;justify-content:space-between;padding:4px 6px 22px;border-bottom:1px solid var(--line);font-size:14px;color:var(--mut)}
+.panel-top b{color:var(--ink);font-family:'Sora',sans-serif}
+.live{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--glow);font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--glow);box-shadow:0 0 10px var(--glow);animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.25}}
+.agents{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}
+.ag{position:relative;border-radius:20px;padding:24px;background:rgba(16,18,27,.9);border:1px solid var(--line);transition:border-color .6s,box-shadow .6s,opacity .6s,transform .6s cubic-bezier(.22,1,.36,1)}
+.js .agents .ag{opacity:.35;transform:translateY(16px)}
+.js .agents.on .ag{opacity:1;transform:none;border-color:rgba(34,211,238,.35);box-shadow:0 0 0 1px rgba(99,102,241,.15),0 18px 60px -30px rgba(34,211,238,.7)}
+.js .agents.on .ag:nth-child(1){transition-delay:.15s}.js .agents.on .ag:nth-child(2){transition-delay:.45s}.js .agents.on .ag:nth-child(3){transition-delay:.75s}.js .agents.on .ag:nth-child(4){transition-delay:1.05s}.js .agents.on .ag:nth-child(5){transition-delay:1.35s}.js .agents.on .ag:nth-child(6){transition-delay:1.65s}
+.ag-h{display:flex;align-items:center;justify-content:space-between}
+.ag-st{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:7px}
+.ag-st i{width:7px;height:7px;border-radius:50%;background:#34D399;box-shadow:0 0 8px #34D399;animation:blink 1.8s infinite}
+.ag h3{font-size:21px;margin:18px 0 8px;letter-spacing:-.03em}
+.ag p{color:var(--mut);font-size:15px}
+.ag-bar{margin-top:18px;height:4px;border-radius:4px;background:rgba(244,246,255,.08);overflow:hidden}
+.ag-bar i{display:block;height:100%;width:40%;background:linear-gradient(90deg,transparent,#22D3EE,transparent);animation:scan 2.4s linear infinite}
+.ag:nth-child(2) .ag-bar i{animation-delay:-.6s}.ag:nth-child(3) .ag-bar i{animation-delay:-1.2s}.ag:nth-child(4) .ag-bar i{animation-delay:-1.8s}.ag:nth-child(5) .ag-bar i{animation-delay:-.9s}
+@keyframes scan{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+.ag-more{border:1px dashed rgba(34,211,238,.4);background:rgba(34,211,238,.04);display:flex;flex-direction:column;justify-content:center}
+.ag-more b{font:800 44px/1 'Sora',sans-serif;letter-spacing:-.05em;color:var(--glow)}
+.ai-note{margin:44px auto 0;max-width:760px;text-align:center;font-size:20px;color:var(--mut)}
+
+/* roadmap */
+.road{position:relative;margin-top:72px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.rl{position:absolute;left:16.6%;right:16.6%;top:34px;height:2px;background:linear-gradient(90deg,#6366F1,#22D3EE);box-shadow:0 0 14px rgba(34,211,238,.6);transform-origin:left}
+.js .road .rl{transform:scaleX(0);transition:transform 1.8s cubic-bezier(.22,1,.36,1) .3s}
+.js .road.on .rl{transform:scaleX(1)}
+.st{position:relative;text-align:center;padding:0 10px}
+.node{width:70px;height:70px;margin:0 auto;border-radius:50%;display:grid;place-items:center;font:800 20px/1 'Sora',sans-serif;background:var(--bg);border:2px solid rgba(99,102,241,.6);box-shadow:0 0 0 8px var(--bg),0 0 40px -6px rgba(99,102,241,.8);position:relative;z-index:2}
+.st:nth-child(4) .node{border-color:#22D3EE;box-shadow:0 0 0 8px var(--bg),0 0 40px -6px rgba(34,211,238,.9)}
+.st-card{margin-top:28px;padding:30px 26px;text-align:left}
+.st-card h3{font-size:26px;letter-spacing:-.035em}
+.st-card p{color:var(--mut);margin-top:10px;font-size:16px}
+.st-lvl{margin-top:18px;display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--glow);padding:7px 12px;border-radius:999px;border:1px solid rgba(34,211,238,.3)}
+
+/* statement */
+.stmt{overflow:hidden;background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.wm{position:absolute;top:50%;left:0;white-space:nowrap;font:800 250px/1 'Sora',sans-serif;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.2px rgba(244,246,255,.08);margin-top:-125px;transform:translateX(calc(var(--p,0) * 12%));pointer-events:none;z-index:1}
+.stmt-g{display:grid;grid-template-columns:6fr 5fr;gap:80px;align-items:end}
+.stmt h2{font-size:64px}
+.stmt-p p+p{margin-top:18px}
+.stmt-p{color:var(--mut);font-size:18px}
+.notfor{margin-top:28px;font:700 22px/1.35 'Sora',sans-serif;letter-spacing:-.025em;color:var(--ink)}
+
+/* includes */
+.inc-h{display:flex;justify-content:space-between;align-items:end;gap:40px}
+.incs{margin-top:56px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.inc{padding:30px}
+.inc h3{font-size:22px;margin:22px 0 8px;letter-spacing:-.03em}
+.inc p{color:var(--mut);font-size:16px}
+.ctaline{margin-top:56px;display:flex;justify-content:center}
+
+/* results */
+.res{background:var(--bg2);border-top:1px solid var(--line)}
+.rating{display:flex;align-items:center;gap:14px;margin-top:26px;color:var(--mut);font-size:15px}
+.stars{display:flex;gap:3px;color:#FBBF24}
+.mas{margin-top:56px;columns:3;column-gap:18px}
+.ph{break-inside:avoid;margin-bottom:18px;border-radius:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:24px;color:var(--dim);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border:1px dashed rgba(244,246,255,.2);background:repeating-linear-gradient(135deg,rgba(244,246,255,.025) 0 12px,transparent 12px 24px)}
+.ph.v{border-color:rgba(34,211,238,.35)}
+.ph .pc{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:rgba(99,102,241,.15);color:var(--glow)}
+.rev{break-inside:avoid;margin:0 0 18px;padding:10px;border-radius:22px;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+@media (hover:hover){.rev:hover{transform:translateY(-6px)}}
+.rev img{display:block;width:100%;height:auto;border-radius:14px;background:#fff}
+.rev figcaption{padding:16px 10px 8px;font-size:15px;line-height:1.5;color:var(--mut)}
+.rev figcaption b{display:block;color:var(--ink);font:700 16px/1.3 'Sora',sans-serif;letter-spacing:-.02em;margin-bottom:6px}
+.resnote{margin-top:18px!important;font-size:13px;color:var(--dim);text-align:center}
+.swipe{display:none}
+
+/* about */
+.about{overflow:hidden}
+.marq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);margin-bottom:96px;position:relative;z-index:3}
+.marq-track{display:flex;gap:14px;width:max-content;animation:marq 38s linear infinite}
+.marq:hover .marq-track{animation-play-state:paused}
+@keyframes marq{to{transform:translateX(-50%)}}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border-radius:999px;font-weight:600;font-size:15px;white-space:nowrap}
+.badge i{width:7px;height:7px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+.ab-g{display:grid;grid-template-columns:5fr 6fr;gap:70px;align-items:start}
+.ab-photo{position:relative;height:720px;overflow:hidden;border-radius:4px}
+.ab-photo img{position:absolute;inset:-60px 0;width:100%;height:calc(100% + 120px);object-fit:cover;object-position:50% 20%;transform:translateY(calc(var(--p,0) * -60px)) scale(1.06);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%),linear-gradient(180deg,#000 62%,transparent 98%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%),linear-gradient(180deg,#000 62%,transparent 98%);mask-composite:intersect}
+.ab-cap{position:absolute;left:24px;bottom:30px;z-index:2;font-size:13px;color:var(--mut);display:flex;align-items:center;gap:8px}
+.name{font-size:104px;line-height:.9;letter-spacing:-.06em;margin-top:18px}
+.role{display:inline-flex;margin-top:22px;padding:9px 16px;border-radius:999px;font-size:14px;font-weight:600;color:var(--mut)}
+.ab-h{font-size:34px;margin-top:34px;letter-spacing:-.035em;line-height:1.12}
+.story{margin-top:22px;color:var(--mut);font-size:17px}
+.story p+p{margin-top:16px}
+.ab-q{margin-top:28px;padding-left:22px;border-left:2px solid var(--glow);font:700 21px/1.4 'Sora',sans-serif;letter-spacing:-.02em}
+.kpis{margin-top:34px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.kpi{padding:20px 20px 14px;border-radius:20px}
+.kpi b{display:block;font:800 34px/1 'Sora',sans-serif;letter-spacing:-.05em}
+.kpi span{display:block;margin-top:6px;font-size:13px;color:var(--mut);line-height:1.35}
+.kpi svg{display:block;margin-top:12px;width:100%;height:34px}
+.wm2{position:absolute;bottom:40px;left:0;white-space:nowrap;font:800 220px/1 'Sora',sans-serif;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.2px rgba(244,246,255,.06);transform:translateX(calc(var(--p,0) * 12%));pointer-events:none;z-index:1}
+
+/* qualify */
+.qual{background:radial-gradient(ellipse 70% 60% at 50% 100%,rgba(14,116,144,.18),transparent 70%),var(--bg2);border-top:1px solid var(--line)}
+.q-g{margin-top:56px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.q-card{padding:36px}
+.q-card h3{font-size:24px;letter-spacing:-.03em}
+.q-card ul{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:16px}
+.q-card li{display:flex;gap:14px;font-size:17px;color:var(--mut)}
+.q-card li b{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font:800 15px/1 'Sora',sans-serif}
+.yes li b{background:rgba(52,211,153,.14);color:#34D399}
+.no li b{background:rgba(244,63,94,.14);color:#FB7185}
+.how{margin-top:18px;padding:30px 36px;display:flex;gap:30px;align-items:center;justify-content:space-between}
+.how p{color:var(--mut);max-width:680px}
+.free{margin-top:36px;text-align:center;color:var(--mut);font-size:16px}
+.free a{font-weight:700}
+
+/* faq */
+.faq-g{margin-top:56px;display:grid;grid-template-columns:5fr 7fr;gap:24px;align-items:start}
+.fq-list{display:flex;flex-direction:column;gap:8px}
+.fq{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;text-align:left;padding:18px 22px;border-radius:16px;border:1px solid var(--line);background:transparent;color:var(--mut);font:600 17px/1.35 'Schibsted Grotesk',sans-serif;cursor:pointer;min-height:56px;transition:all .35s}
+.fq:hover{color:var(--ink);border-color:rgba(244,246,255,.22)}
+.fq.act{color:var(--ink);background:rgba(99,102,241,.12);border-color:rgba(99,102,241,.5)}
+.fq-n{font:800 12px/1 'Sora',sans-serif;color:var(--glow);letter-spacing:.1em}
+.fq-p{padding:44px;border-radius:26px;min-height:300px}
+.fq-p h3{font-size:32px;letter-spacing:-.04em;line-height:1.12}
+.fq-p p{margin-top:18px;color:var(--mut);font-size:19px}
+
+/* closing */
+.close-g{display:grid;grid-template-columns:7fr 5fr;gap:60px;align-items:center}
+.close-g h2{font-size:72px}
+.chart{padding:28px;border-radius:26px}
+.chart svg{display:block;width:100%;height:auto}
+.chart-l{display:flex;justify-content:space-between;margin-top:12px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.js .on .grow:nth-of-type(2){transition-delay:.15s}.js .on .grow:nth-of-type(3){transition-delay:.3s}.js .on .grow:nth-of-type(4){transition-delay:.45s}.js .on .grow:nth-of-type(5){transition-delay:.6s}.js .on .grow:nth-of-type(6){transition-delay:.75s}
+
+/* final cta */
+.final{padding:60px 0 130px}
+.fc{padding:80px 60px;text-align:center;border-radius:36px;box-shadow:inset 0 1px 1px rgba(255,255,255,.08),0 0 120px -30px rgba(99,102,241,.7),0 0 0 1px rgba(34,211,238,.1)}
+.fc::after{content:'';position:absolute;left:50%;top:-40%;width:70%;height:80%;transform:translateX(-50%);background:radial-gradient(circle,rgba(99,102,241,.35),transparent 65%);filter:blur(40px);pointer-events:none;z-index:0}
+.fc>*{position:relative;z-index:2}
+.bigclock{display:flex;justify-content:center;gap:14px;margin-top:30px}
+.bc{width:108px;padding:18px 0 14px;border-radius:20px}
+.bc b{display:block;font:800 52px/1 'Sora',sans-serif;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.bc span{display:block;margin-top:8px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.fc h2{font-size:58px;margin:38px auto 0;max-width:820px}
+.fc-b{margin-top:38px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.fc .micro{justify-content:center;margin-top:18px}
+
+/* footer */
+.foot{border-top:1px solid var(--line);padding:56px 0 48px;color:var(--dim);font-size:14px;position:relative;z-index:3}
+.foot-t{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.foot-l{display:flex;gap:24px;flex-wrap:wrap}
+.foot-l a{color:var(--mut);text-decoration:none}
+.foot-l a:hover{color:var(--ink)}
+.disc{margin-top:30px;padding-top:26px;border-top:1px solid var(--line);font-size:12.5px;line-height:1.7;max-width:1000px}
+.disc p+p{margin-top:10px}
+
+/* reveal engine */
+.in{animation:fadeUp 1s cubic-bezier(.22,1,.36,1) both}
+.d1{animation-delay:.15s}.d2{animation-delay:.3s}.d3{animation-delay:.45s}.d4{animation-delay:.6s}.d5{animation-delay:.75s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);filter:blur(6px)}}
+.js .rv,.js .rv-l,.js .rv-s{transition:opacity 1s cubic-bezier(.22,1,.36,1),transform 1.15s cubic-bezier(.22,1,.36,1),filter 1s cubic-bezier(.22,1,.36,1)}
+.js .rv{opacity:0;transform:translateY(64px);filter:blur(8px)}
+.js .rv-l{opacity:0;transform:translateX(-90px)}
+.js .rv-s{opacity:0;transform:translateY(56px) scale(.94);filter:blur(6px)}
+.js .rv.on,.js .rv-l.on,.js .rv-s.on{opacity:1;transform:none;filter:blur(0)}
+.js .stg>*:nth-child(2){transition-delay:.09s}.js .stg>*:nth-child(3){transition-delay:.18s}.js .stg>*:nth-child(4){transition-delay:.27s}.js .stg>*:nth-child(5){transition-delay:.36s}.js .stg>*:nth-child(6){transition-delay:.45s}
+.js .draw{stroke-dasharray:640;stroke-dashoffset:640;transition:stroke-dashoffset 2s cubic-bezier(.22,1,.36,1) .35s}.js .on .draw{stroke-dashoffset:0}
+.js .grow{transform-origin:bottom;transform-box:fill-box;transform:scaleY(0);transition:transform 1.2s cubic-bezier(.22,1,.36,1)}.js .on .grow{transform:scaleY(1)}
+.par{transform:translateY(calc(var(--sy,0) * .18px));opacity:calc(1 - var(--sy,0) / 1600)}
+
+/* responsive */
+@container pg (max-width:1080px){
+  .hero h1{font-size:60px}.h2{font-size:48px}.stmt h2{font-size:52px}.close-g h2{font-size:56px}.name{font-size:84px}
+  .two,.stmt-g,.close-g{grid-template-columns:1fr;gap:48px}
+  .ab-g{grid-template-columns:1fr 1fr;gap:44px}
+  .learn{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .agents,.incs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .nav-l{gap:20px}
+}
+@container pg (max-width:820px){
+  .pg{font-size:16px}
+  .wrap{padding:0 20px}
+  .sec{padding:72px 0}
+  .bar-in{padding:8px 16px;gap:10px;font-size:12.5px;justify-content:space-between}
+  .bar-msg{display:none}
+  .nav{padding:16px 0}.nav-l,.nav-cta{display:none}
+  .hero{padding:24px 0 64px}
+  .hero h1{font-size:31px;letter-spacing:-.04em;margin-top:20px}
+  .hero .lead{font-size:15px;line-height:1.5;margin-top:16px}
+  .m-hide{display:none}
+  .pill{gap:8px;padding:5px 12px 5px 5px;font-size:12px;white-space:nowrap;max-width:100%}
+  .pill .tag{font-size:10px;padding:5px 9px;letter-spacing:.1em}
+  .vsl{margin-top:34px;padding:6px;border-radius:20px}.vsl-in{border-radius:15px}
+  .play{width:72px;height:72px;margin:-36px 0 0 -36px}.play svg{width:26px;height:26px}
+  .vsl-tag,.vsl-time{top:10px;font-size:10px;padding:6px 10px}.vsl-tag{left:10px}.vsl-time{right:10px}
+  .vsl-cap{left:12px;right:12px;bottom:10px;font-size:11px}.vsl-ph{display:none}
+  .hero-cta .btn{width:100%}
+  .learn{grid-template-columns:1fr;gap:10px;margin-top:40px}
+  .h2,.stmt h2,.fc h2{font-size:34px}
+  .close-g h2{font-size:40px}
+  .lead{font-size:16.5px}
+  .mrow{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .m{padding:28px 18px;border-left:none;border-top:1px solid var(--line)}
+  .m:nth-child(even){border-left:1px solid var(--line)}
+  .m:nth-child(-n+2){border-top:none}
+  .m b{font-size:42px}
+  .cards2,.agents,.incs,.q-g,.road,.faq-g,.kpis,.ab-g{grid-template-columns:1fr}
+  .card,.inc,.q-card{padding:24px}
+  .quote{padding:26px}.quote p{font-size:21px}
+  .panel{padding:14px;border-radius:22px;margin-top:40px}
+  .panel-top{flex-direction:column;align-items:flex-start;gap:8px}
+  .road{gap:0;margin-top:44px}
+  .rl{left:34px;right:auto;top:34px;bottom:120px;width:2px;height:auto;transform-origin:top}
+  .js .road .rl{transform:scaleY(0)}.js .road.on .rl{transform:scaleY(1)}
+  .st{text-align:left;padding:0 0 28px 0;display:grid;grid-template-columns:70px 1fr;gap:18px}
+  .st-card{margin-top:0;padding:22px}
+  .wm{font-size:130px;margin-top:-65px}.wm2{font-size:110px}
+  .inc-h{flex-direction:column;align-items:flex-start}
+  .mas{columns:auto;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:40px -20px 0;padding:0 20px 8px}
+  .ph{flex:0 0 78%;scroll-snap-align:center;margin-bottom:0;min-height:300px!important}
+  .rev{flex:0 0 84%;scroll-snap-align:center;margin-bottom:0}
+  .swipe{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:13px;color:var(--dim)}
+  .marq{margin-bottom:48px}
+  .ab-photo{height:440px;margin:0 -20px}
+  .name{font-size:58px}
+  .ab-h{font-size:27px}
+  .how{flex-direction:column;align-items:flex-start;padding:24px}
+  .how .btn,.ctaline .btn,.fc-b .btn,.close-g .btn{width:100%}
+  .fq-p{padding:26px;min-height:0}.fq-p h3{font-size:24px}.fq-p p{font-size:16.5px}
+  .chart{padding:18px}
+  .final{padding:32px 0 72px}
+  .fc{padding:48px 20px;border-radius:26px}
+  .bigclock{gap:8px}.bc{width:84px;padding:14px 0 10px}.bc b{font-size:38px}
+  .foot-t{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){.js .rv,.js .rv-l,.js .rv-s{transform:none!important;filter:none!important}.blob,.shiny,.marq-track,.play,.ag-bar i,.vsl-track i{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="pg">
+
+  <!-- 1 · BARRA STICKY -->
+  <div class="bar">
+    <div class="bar-in">
+      <span class="dot"></span>
+      <span class="bar-msg">Diagnóstico gratuito abierto: <b>4 preguntas, 2 minutos</b>. Se cierra en</span>
+      <span class="clock"><time data-t="hh">24</time><span>:</span><time data-t="mm">00</time><span>:</span><time data-t="ss">00</time></span>
+      <a class="btn btn-acc btn-sm shine" href="https://mentoria.unlockedecom.co/ig">HACER MI DIAGNÓSTICO</a>
+    </div>
+    <div class="prog" id="prog" style="width: 100%"></div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" id="inicio">
+    <div class="atm">
+      <canvas class="mesh" id="mesh" aria-hidden="true"></canvas>
+      <div class="grid"></div>
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+    </div>
+    <div class="guides"></div>
+    <div class="wrap">
+      <!-- 2 · NAV -->
+      <nav class="nav in" aria-label="Principal" style="text-align: left">
+        <a class="logo" href="#inicio" aria-label="Jose Naicipa, inicio">
+          <span class="logo-mark">JN</span>
+          <span class="logo-t">Jose Naicipa<small>Unlocked Academy</small></span>
+        </a>
+        <div class="nav-l">
+          <a href="#metodo">El método</a>
+          <a href="#ia">IA</a>
+          <a href="#resultados">Resultados</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <a class="btn btn-ghost btn-sm nav-cta" href="https://mentoria.unlockedecom.co/ig">HACER MI DIAGNÓSTICO</a>
+      </nav>
+
+      <div class="par">
+        <div class="pill glass in d1" style="border-radius: 999px"><span class="tag">ECOMMERCE + IA</span>+700 dueños de marcas<span class="m-hide">&#160;acompañados</span></div>
+        <h1 class="in d2"><span class="light">De dropshipping a marca propia,</span> con un sistema y con <span class="shiny">la IA trabajando para ti</span></h1>
+        <p class="lead in d3">El problema no es la falta de información. Es la falta de un <b>sistema estructurado</b>.<span class="m-hide"> En este video te muestro el que usamos en Unlocked para construir marcas de ecommerce con estrategia, disciplina y <b>agentes de inteligencia artificial</b>.</span></p>
+      </div>
+      <!-- VSL: INICIO (borrar este bloque para quitarlo) -->
+        <div class="vsl glass in d4">
+          <div class="vsl-in">
+            <img src="img/vsl-miniatura.jpg" alt="Jose Naicipa hablando a cámara">
+            <div class="vsl-sh"></div>
+            <div class="vsl-tag"><span class="dot" style="width: 7px; height: 7px"></span>Video privado</div>
+            <div class="vsl-time">[DURACIÓN]</div>
+            <button class="play" type="button" aria-label="Reproducir video">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"></path></svg>
+            </button>
+            <div class="vsl-ph">[ VSL · pegar link del video ]</div>
+            <div class="vsl-cap"><span>0:00</span><div class="vsl-track"><i></i></div><span>Ecommerce + IA</span></div>
+          </div>
+        </div>
+      <!-- VSL: FIN -->
+
+      <div class="hero-cta in d5">
+        <a class="btn btn-acc btn-lg shine" href="https://mentoria.unlockedecom.co/ig">HACER MI DIAGNÓSTICO
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </a>
+        <p class="micro"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Si ya vendes o tienes capital para invertir: 4 preguntas, 2 minutos. Descubre si calificas.</p>
+      </div>
+
+      <div class="learn rv stg">
+        <p class="learn-h">En este video vas a descubrir</p>
+        <div class="li glass rv-s"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h6"></path></svg></span>Por qué la información sin orden te deja estancado</div>
+        <div class="li glass rv-s"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"></path><path d="M14 7h7v7"></path></svg></span>El camino de dropshipping a marca propia y a empresa</div>
+        <div class="li glass rv-s"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="7" width="14" height="12" rx="3"></rect><path d="M12 3v4M9 12h.01M15 12h.01M9 16h6"></path></svg></span>Cómo trabajan los agentes de IA dentro de tu tienda</div>
+        <div class="li glass rv-s"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v4M12 16h.01"></path></svg></span>Por qué no te damos todo hecho (y por qué te conviene)</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3 · AUTORIDAD -->
+  <section class="metrics" aria-label="Cifras">
+    <div class="wrap">
+      <div class="mrow rv stg">
+        <div class="m rv"><b>+700</b><span>dueños de marcas acompañados</span></div>
+        <div class="m rv"><b>28<small>K</small></b><span>personas en su comunidad</span></div>
+        <div class="m rv"><b>3</b><span>programas: Dropshipping, Marca Propia y Empresarial</span></div>
+        <div class="m rv"><b>+12</b><span>agentes de IA en su ecosistema [confirmar]</span></div>
+      </div>
+    </div>
+    <p class="forbes">Unlocked Academy en Forbes México</p>
+  </section>
+
+  <!-- 4 · EL PROBLEMA -->
+  <section class="sec" id="metodo">
+    <div class="atm"><div class="blob b3"></div></div>
+    <div class="wrap">
+      <div class="two">
+        <div class="rv">
+          <span class="eyebrow">El problema</span>
+          <h2 class="h2" style="margin-top: 22px"><span class="light">No te falta motivación.</span> Te falta estructura.</h2>
+          <div class="quote glass rv-s">
+            <p>“El problema no es la falta de información, sino la falta de un sistema estructurado.”</p>
+            <cite>— Jose Naicipa</cite>
+          </div>
+        </div>
+        <div class="cards2 stg">
+          <article class="card glass rv-s"><span class="num">01</span><h3>Información sin orden</h3><p>Miles de videos, ninguno te dice qué hacer primero.</p></article>
+          <article class="card glass rv-s"><span class="num">02</span><h3>Haces todo a mano</h3><p>Tiendas, textos, creativos y atención: horas copiando y pegando prompts.</p></article>
+          <article class="card glass rv-s"><span class="num">03</span><h3>Te venden todo hecho</h3><p>Te arman la landing y te prometen garantías. A la segunda vez estás perdido, porque nunca aprendiste el criterio.</p></article>
+          <article class="card glass rv-s"><span class="num">04</span><h3>Te quedas en dropshipping</h3><p>Vendes, pero sin marca: compites por precio y todo depende del próximo producto.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · ECOMMERCE + IA -->
+  <section class="sec ai" id="ia">
+    <div class="atm"><div class="grid"></div></div>
+    <div class="wrap">
+      <div class="ai-head rv">
+        <span class="eyebrow">El diferencial</span>
+        <h2 class="h2" style="margin-top: 22px"><span class="light">O aprendes a dirigir,</span> <span class="shiny">o te van a dirigir a ti</span></h2>
+        <p class="lead">Hoy una sola persona puede supervisar decenas de agentes de IA. Eso ya no es ser empleado: <b>es ser dueño</b>. En Unlocked no usamos ChatGPT para preguntas básicas: construimos un <b>ecosistema de agentes que trabajan para tu tienda 24/7</b>.</p>
+      </div>
+      <div class="panel glass rv-s">
+        <div class="panel-top"><span><b>Panel de agentes</b> · tu tienda</span><span class="live"><i></i>Trabajando en vivo</span></div>
+        <div class="agents rv">
+          <div class="ag"><div class="ag-h"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg></span><span class="ag-st"><i></i>Activo</span></div><h3>Agente de producto</h3><p>Investiga y valida productos y nichos.</p><div class="ag-bar"><i></i></div></div>
+          <div class="ag"><div class="ag-h"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9l2-5h12l2 5"></path><path d="M4 9h16v11H4z"></path><path d="M9 20v-6h6v6"></path></svg></span><span class="ag-st"><i></i>Activo</span></div><h3>Agente de tienda</h3><p>Arma páginas de producto y textos de venta.</p><div class="ag-bar"><i></i></div></div>
+          <div class="ag"><div class="ag-h"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l15-6v14L3 13z"></path><path d="M7 12.5V18a2 2 0 0 0 4 0v-4"></path></svg></span><span class="ag-st"><i></i>Activo</span></div><h3>Agente de anuncios</h3><p>Genera ángulos, guiones y variaciones de creativos.</p><div class="ag-bar"><i></i></div></div>
+          <div class="ag"><div class="ag-h"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg></span><span class="ag-st"><i></i>Activo</span></div><h3>Agente de atención</h3><p>Responde a tus clientes las 24 horas.</p><div class="ag-bar"><i></i></div></div>
+          <div class="ag"><div class="ag-h"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg></span><span class="ag-st"><i></i>Activo</span></div><h3>Agente de análisis</h3><p>Lee tus números y te dice qué ajustar.</p><div class="ag-bar"><i></i></div></div>
+          <div class="ag ag-more"><b>+7</b><h3>agentes más</h3><p>[Confirmar el resto del ecosistema]</p></div>
+        </div>
+      </div>
+      <p class="ai-note rv">Pero la IA no reemplaza el criterio. Necesitas saber si lo que te entrega está bien o mal. <span class="hl">Por eso te enseñamos a hacerlo, no solo a apretar un botón.</span></p>
+    </div>
+  </section>
+
+  <!-- 6 · EL CAMINO -->
+  <section class="sec" id="camino">
+    <div class="wrap">
+      <div class="rv" style="text-align: center">
+        <span class="eyebrow">El camino</span>
+        <h2 class="h2" style="margin-top: 22px">De dropshipping a marca propia… <span class="shiny">y a empresa</span></h2>
+      </div>
+      <div class="road rv stg">
+        <div class="rl" aria-hidden="true"></div>
+        <div class="st rv"><div class="node">01</div><div class="st-card glass"><h3>Dropshipping</h3><p>Tu primera tienda, tus primeras ventas y las bases: producto, tienda y campañas.</p><span class="st-lvl">Nivel 1 · Primeros pasos</span></div></div>
+        <div class="st rv"><div class="node">02</div><div class="st-card glass"><h3>Marca propia</h3><p>Dejas de competir por precio: producto con tu marca, posicionamiento y margen.</p><span class="st-lvl">Mentoría VIP 1:1 · Marca Propia</span></div></div>
+        <div class="st rv"><div class="node">03</div><div class="st-card glass"><h3>Ecommerce empresarial</h3><p>Escalas en varios canales, optimizas con datos y armas un negocio que funciona sin ti.</p><span class="st-lvl">Ecommerce Empresarial</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · POR QUÉ NO TE DAMOS TODO HECHO -->
+  <section class="sec stmt" data-par="">
+    <div class="wm" aria-hidden="true">CRITERIO · CRITERIO · CRITERIO</div>
+    <div class="wrap">
+      <div class="stmt-g">
+        <div class="rv">
+          <span class="eyebrow">Por qué no te damos todo hecho</span>
+          <h2 style="margin-top: 22px"><span class="light">Porque este negocio</span> exige repetir procesos</h2>
+        </div>
+        <div class="stmt-p rv">
+          <p>Muchas mentorías te prometen hacerte la landing y darte garantías. La primera vez suena increíble. Pero el ecommerce exige repetir procesos, y si no tienes las bases, a la segunda vez estás perdido.</p>
+          <p>En Unlocked aprendes a hacerlo tú, con <span class="glowtxt">mentores que construyeron y escalaron sus propias marcas</span>, y con la IA multiplicando lo que ya sabes hacer.</p>
+          <p class="notfor">Esto no es para curiosos. Es para quienes están dispuestos a hacer el trabajo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · QUÉ INCLUYE -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="inc-h rv">
+        <div>
+          <span class="eyebrow">Qué incluye</span>
+          <h2 class="h2" style="margin-top: 22px; max-width: 700px"><span class="light">Todo lo que necesitas</span> para construir tu marca</h2>
+        </div>
+        <p class="lead" style="max-width: 380px">[Confirmar el contenido exacto de cada programa]</p>
+      </div>
+      <div class="incs stg">
+        <article class="inc glass rv-s"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"></path></svg></span><h3>Mentoría estratégica</h3><p>Cómo escalar tiendas y construir marcas.</p></article>
+        <article class="inc glass rv-s"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="14" height="14" rx="3"></rect><path d="M17 10l4-2v8l-4-2"></path></svg></span><h3>Sesiones en vivo</h3><p>Feedback continuo y análisis de tus campañas.</p></article>
+        <article class="inc glass rv-s"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"></path><path d="M8 7h6M8 11h6"></path></svg></span><h3>Formación práctica</h3><p>Shopify, Meta Ads, TikTok Ads, automatizaciones y SEO.</p></article>
+        <article class="inc glass rv-s"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="7" width="14" height="12" rx="3"></rect><path d="M12 3v4M9 12h.01M15 12h.01M9 16h6"></path></svg></span><h3>Ecosistema de agentes de IA</h3><p>Para producir más en menos tiempo.</p></article>
+        <article class="inc glass rv-s"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h13v10H3zM16 10h4l1 3v4h-5"></path><circle cx="7" cy="18" r="1.6"></circle><circle cx="17" cy="18" r="1.6"></circle></svg></span><h3>Red de proveedores</h3><p>Y recursos operativos para tu marca.</p></article>
+        <article class="inc glass rv-s"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"></circle><path d="M3 20a6 6 0 0 1 12 0"></path><circle cx="17" cy="9" r="2.6"></circle><path d="M15.5 14.2A5 5 0 0 1 21 19"></path></svg></span><h3>Comunidad privada</h3><p>Con emprendedores que avanzan contigo.</p></article>
+      </div>
+      <div class="ctaline rv">
+        <a class="btn btn-acc btn-lg shine" href="https://mentoria.unlockedecom.co/ig">HACER MI DIAGNÓSTICO <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 · RESULTADOS -->
+  <section class="sec res" id="resultados">
+    <div class="wrap">
+      <div class="rv">
+        <span class="eyebrow">Resultados</span>
+        <h2 class="h2" style="margin-top: 22px; max-width: 900px"><span class="light">Emprendedores que pasaron de la confusión</span> a ejecutar con un método</h2>
+        <div class="rating"><span class="stars" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"></path></svg>
+        </span>+700 dueños de marcas acompañados</div>
+      </div>
+      <div class="mas stg">
+        <figure class="rev glass rv-s"><img src="img/testimonio-diego.png" alt="Chat de Diego Fernando Ospina con su panel de ventas: COP 129,4 M en ventas totales y 2.035 pedidos"><figcaption><b>Diego Fernando Ospina</b>“De febrero a marzo full aprender… Abril y mayo perdimos en los testeos fallidos. En lo que ganamos en julio y agosto, se pagó la mentoría.”</figcaption></figure>
+        <figure class="rev glass rv-s"><img src="img/shopify-canales.png" alt="Panel de Shopify: COP 3.151 M en ventas totales por canal y 44.622 pedidos"><figcaption><b>Panel de Shopify de un alumno</b>COP 3.151 M en ventas y 44.622 pedidos entre el 1 de enero y el 24 de septiembre de 2026.</figcaption></figure>
+        <figure class="rev glass rv-s"><img src="img/testimonio-agentes.png" alt="Mensaje de un alumno junto a su escritorio con los agentes de IA en pantalla"><figcaption><b>Agentes de IA sin saber programar</b>“Ya dejé conectado a Hermes con sus agentes en Discord y oficina de tiempo real sin saber nada de programación. Gracias por darnos todo el conocimiento.”</figcaption></figure>
+        <figure class="rev glass rv-s"><img src="img/shopify-ventas.png" alt="Gráfico de ventas totales: COP 3.151.079.755, 53 % más que el mismo período del año anterior"><figcaption><b>Ventas totales en el tiempo</b>+53 % frente al mismo período de 2025.</figcaption></figure>
+      </div>
+      <p class="swipe"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Desliza para ver más</p>
+      <p class="resnote">Capturas compartidas por alumnos de Unlocked. Son casos reales, no resultados típicos ni garantizados.</p>
+    </div>
+  </section>
+
+  <!-- 10 · MI HISTORIA -->
+  <section class="sec about" id="historia" data-par="">
+    <div class="marq" aria-hidden="true">
+      <div class="marq-track">
+        <span class="badge glass"><i></i>Ecommerce + IA</span>
+        <span class="badge glass"><i></i>Dropshipping</span>
+        <span class="badge glass"><i></i>Marca propia</span>
+        <span class="badge glass"><i></i>Ecommerce empresarial</span>
+        <span class="badge glass"><i></i>+700 dueños de marcas</span>
+        <span class="badge glass"><i></i>Unlocked Academy</span>
+        <span class="badge glass"><i></i>Agentes de IA 24/7</span>
+        <span class="badge glass"><i></i>Mentoría VIP 1:1</span>
+        <span class="badge glass"><i></i>Shopify · Meta Ads · TikTok Ads</span>
+        <span class="badge glass"><i></i>Padre de familia</span>
+        <span class="badge glass"><i></i>Ecommerce + IA</span>
+        <span class="badge glass"><i></i>Dropshipping</span>
+        <span class="badge glass"><i></i>Marca propia</span>
+        <span class="badge glass"><i></i>Ecommerce empresarial</span>
+        <span class="badge glass"><i></i>+700 dueños de marcas</span>
+        <span class="badge glass"><i></i>Unlocked Academy</span>
+        <span class="badge glass"><i></i>Agentes de IA 24/7</span>
+        <span class="badge glass"><i></i>Mentoría VIP 1:1</span>
+        <span class="badge glass"><i></i>Shopify · Meta Ads · TikTok Ads</span>
+        <span class="badge glass"><i></i>Padre de familia</span>
+      </div>
+    </div>
+    <div class="wm2" aria-hidden="true">NAICIPA · NAICIPA</div>
+    <div class="wrap">
+      <div class="ab-g">
+        <div class="ab-photo rv-l">
+          <img src="img/familia.jpg" alt="Jose Naicipa con su familia">
+          <p class="ab-cap"><span class="dot" style="background: #22D3EE; animation: none"></span>Mi familia, mi para qué</p>
+        </div>
+        <div class="rv">
+          <span class="eyebrow">Mi historia</span>
+          <h2 class="name"><span class="shiny">Jose Naicipa</span></h2>
+          <span class="role glass">Cofundador y mentor principal · Unlocked Academy</span>
+          <h3 class="ab-h"><span class="light">Hay errores que cuestan dinero.</span> Otros te cuestan años.</h3>
+          <div class="story">
+            <p>Mi papá me enseñó a trabajar. Con mi hermano aprendí a construir. Y <span class="glowtxt">mi familia me recuerda cada día para qué lo hago.</span></p>
+            <p>En el camino hubo negocios tradicionales que no funcionaron, decisiones duras y momentos en los que tocó empezar de nuevo. Con el ecommerce encontré un modelo que sí escalaba, y junto a mi hermano Juan Sebastián fundamos Unlocked para que otros no tuvieran que tropezar como nosotros.</p>
+          </div>
+          <p class="ab-q">“Me habría cambiado mucho tener a alguien que me ayudara a ver el camino antes de tropezar.”</p>
+          <div class="kpis stg">
+            <div class="kpi glass rv-s"><b>+700</b><span>dueños de marcas</span><svg viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true"><path class="draw" d="M2 30 L22 26 L40 27 L58 19 L76 20 L94 10 L118 4" fill="none" stroke="#22D3EE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+            <div class="kpi glass rv-s"><b>28K</b><span>en su comunidad</span><svg viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true"><path class="draw" d="M2 31 L20 28 L38 24 L56 25 L74 15 L96 11 L118 5" fill="none" stroke="#818CF8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+            <div class="kpi glass rv-s"><b>+12</b><span>agentes de IA</span><svg viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true"><path class="draw" d="M2 29 L24 29 L42 22 L60 22 L78 13 L98 13 L118 4" fill="none" stroke="#22D3EE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+          </div>
+          <div style="margin-top: 34px">
+            <a class="btn btn-acc shine" href="https://mentoria.unlockedecom.co/ig">HACER MI DIAGNÓSTICO <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 · ¿CALIFICAS? -->
+  <section class="sec qual" id="califica">
+    <div class="wrap">
+      <div class="rv" style="text-align: center; max-width: 900px; margin: 0 auto">
+        <span class="eyebrow">¿Calificas?</span>
+        <h2 class="h2" style="margin-top: 22px"><span class="light">Esta mentoría es para quien</span> ya vende o tiene capital para invertir</h2>
+      </div>
+      <div class="q-g stg">
+        <div class="q-card yes glass rv-s">
+          <h3>Haz el diagnóstico si…</h3>
+          <ul>
+            <li><b>+</b>Ya vendes y quieres pasar a marca propia.</li>
+            <li><b>+</b>Tienes capital y quieres arrancar con un sistema.</li>
+            <li><b>+</b>Quieres usar IA de verdad en tu negocio.</li>
+          </ul>
+        </div>
+        <div class="q-card no glass rv-s">
+          <h3>Todavía no es para ti si…</h3>
+          <ul>
+            <li><b>–</b>Buscas atajos o promesas mágicas.</li>
+            <li><b>–</b>Quieres que alguien lo haga todo por ti.</li>
+            <li><b>–</b>No tienes ni ventas ni capital (mira la opción gratis abajo).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="how glass rv-s">
+        <p><span class="hl">Así es el diagnóstico:</span> 4 preguntas sobre tu situación (si vendes, tu facturación, tu capital y tu objetivo) [confirmar]. Con eso te decimos qué programa es para ti.</p>
+        <a class="btn btn-acc btn-lg shine" href="https://mentoria.unlockedecom.co/ig">HACER MI DIAGNÓSTICO <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+      <p class="free rv">¿Todavía no vendes? Empieza gratis con <a href="https://empieza.unlockedecom.co">“Primera Venta eCommerce”</a> y únete a la comunidad de Unlocked.</p>
+    </div>
+  </section>
+
+  <!-- 12 · FAQ -->
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <div class="rv">
+        <span class="eyebrow">Preguntas frecuentes</span>
+        <h2 class="h2" style="margin-top: 22px"><span class="light">Lo que todos</span> preguntan antes</h2>
+      </div>
+      <div class="faq-g">
+        <div class="fq-list rv stg">
+          <button type="button" class="fq act" data-i="0" data-a="No para empezar, pero sí compromiso. Hay programas desde los primeros pasos hasta ecommerce empresarial." aria-pressed="true"><span>¿Necesito experiencia?</span><span class="fq-n">01</span></button>
+          <button type="button" class="fq" data-i="1" data-a="No. Te enseñamos a dirigir los agentes y, sobre todo, a tener criterio para saber si lo que te entregan está bien." aria-pressed="false"><span>¿Necesito saber de IA?</span><span class="fq-n">02</span></button>
+          <button type="button" class="fq" data-i="2" data-a="No te damos todo hecho: te enseñamos a hacerlo, porque este negocio exige repetir procesos." aria-pressed="false"><span>¿Me hacen la tienda?</span><span class="fq-n">03</span></button>
+          <button type="button" class="fq" data-i="3" data-a="Ambos. El camino va de dropshipping a marca propia y a ecommerce empresarial." aria-pressed="false"><span>¿Es dropshipping o marca propia?</span><span class="fq-n">04</span></button>
+          <button type="button" class="fq" data-i="4" data-a="Depende del programa. El diagnóstico te dice cuál es para ti." aria-pressed="false"><span>¿Cuánto cuesta?</span><span class="fq-n">05</span></button>
+        </div>
+        <div class="fq-p glass rv-s" aria-live="polite">
+          <span class="fq-n"><span id="faqN">01</span> / 05</span>
+          <h3 id="faqQ" style="margin-top: 16px">¿Necesito experiencia?</h3>
+          <p id="faqA">No para empezar, pero sí compromiso. Hay programas desde los primeros pasos hasta ecommerce empresarial.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 · CIERRE -->
+  <section class="sec" style="padding-bottom: 60px">
+    <div class="wrap">
+      <div class="close-g">
+        <div class="rv">
+          <h2><span class="light">Deja de hacerlo todo a mano.</span> <span class="shiny">Empieza a dirigir tu marca.</span></h2>
+        </div>
+        <div class="chart glass rv-s">
+          <svg viewBox="0 0 400 240" role="img" aria-label="Ilustración: crecimiento de dropshipping a marca propia y a ecommerce empresarial">
+            <defs><linearGradient id="gb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22D3EE"></stop><stop offset="1" stop-color="#4F46E5" stop-opacity=".35"></stop></linearGradient></defs>
+            <line x1="0" y1="220" x2="400" y2="220" stroke="rgba(244,246,255,.12)"></line>
+            <rect class="grow" x="14" y="180" width="44" height="40" rx="8" fill="url(#gb)"></rect>
+            <rect class="grow" x="80" y="160" width="44" height="60" rx="8" fill="url(#gb)"></rect>
+            <rect class="grow" x="146" y="128" width="44" height="92" rx="8" fill="url(#gb)"></rect>
+            <rect class="grow" x="212" y="100" width="44" height="120" rx="8" fill="url(#gb)"></rect>
+            <rect class="grow" x="278" y="64" width="44" height="156" rx="8" fill="url(#gb)"></rect>
+            <rect class="grow" x="344" y="24" width="44" height="196" rx="8" fill="url(#gb)"></rect>
+            <path class="draw" d="M36 170 L102 148 L168 116 L234 88 L300 52 L366 14" fill="none" stroke="#F4F6FF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <div class="chart-l"><span>Dropshipping</span><span>Marca propia</span><span>Empresarial</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final">
+    <div class="wrap">
+      <div class="fc glass rv-s">
+        <div class="pill glass" style="border-radius: 999px"><span class="tag">DIAGNÓSTICO</span>Gratis · 4 preguntas · 2 minutos</div>
+        <div class="bigclock" aria-label="Tiempo restante">
+          <div class="bc glass"><b><time data-t="hh">24</time></b><span>Horas</span></div>
+          <div class="bc glass"><b><time data-t="mm">00</time></b><span>Min</span></div>
+          <div class="bc glass"><b><time data-t="ss">00</time></b><span>Seg</span></div>
+        </div>
+        <h2><span class="light">Construye una marca de ecommerce</span> con sistema, no con suerte</h2>
+        <div class="fc-b">
+          <a class="btn btn-acc btn-lg shine" href="https://mentoria.unlockedecom.co/ig">HACER MI DIAGNÓSTICO <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+          <a class="btn btn-ghost btn-lg" href="https://empieza.unlockedecom.co">EMPEZAR GRATIS</a>
+        </div>
+        <p class="micro">2 minutos · Descubre si calificas · Sin compromiso</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-t">
+        <a class="logo" href="#inicio" aria-label="Volver al inicio"><span class="logo-mark">JN</span><span class="logo-t">Jose Naicipa<small>Unlocked Academy</small></span></a>
+        <div class="foot-l">
+          <a href="#">[Política de privacidad]</a>
+          <a href="#">[Términos y condiciones]</a>
+          <a href="https://www.instagram.com/josenaicipa/">Instagram</a>
+        </div>
+      </div>
+      <div class="disc">
+        <p>© 2026 FutureAhead. Todos los derechos reservados. Jose Naicipa · Unlocked Academy.</p>
+        <p>Los resultados no están garantizados. Los resultados mencionados dependen del esfuerzo, la experiencia, el capital y la ejecución de cada persona; no constituyen una promesa de ingresos.</p>
+        <p>Este sitio no forma parte del sitio web de Facebook ni de Meta Platforms, Inc., y no está respaldado por Meta de ninguna manera. Facebook e Instagram son marcas registradas de Meta Platforms, Inc.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+<script>
+(function(){
+  var root = document.querySelector('.pg');
+  if (!root) return;
+  var pad = function(n){ return String(n).padStart(2,'0'); };
+
+  /* Reloj de 24 h (se guarda por visitante para que no se reinicie al recargar) */
+  var total = 86400, end;
+  try { end = parseInt(localStorage.getItem('jn_end') || '0', 10); } catch(e) { end = 0; }
+  if (!end || end < Date.now()) { end = Date.now() + total*1000; try { localStorage.setItem('jn_end', String(end)); } catch(e) {} }
+  var hh = root.querySelectorAll('[data-t="hh"]'), mm = root.querySelectorAll('[data-t="mm"]'), ss = root.querySelectorAll('[data-t="ss"]'), prog = document.getElementById('prog');
+  function tick(){
+    var left = Math.max(0, Math.round((end - Date.now())/1000));
+    var h = pad(Math.floor(left/3600)), m = pad(Math.floor(left%3600/60)), s = pad(left%60);
+    hh.forEach(function(e){ e.textContent = h; }); mm.forEach(function(e){ e.textContent = m; }); ss.forEach(function(e){ e.textContent = s; });
+    if (prog) prog.style.width = (left/total*100).toFixed(3) + '%';
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* Revelado al hacer scroll */
+  root.classList.add('js');
+  var els = root.querySelectorAll('.rv,.rv-l,.rv-s');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } }); }, { threshold:.1, rootMargin:'0px 0px -10% 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('on'); }); }
+
+  /* Parallax */
+  var pars = [].slice.call(root.querySelectorAll('[data-par]')), raf = 0;
+  function update(){
+    raf = 0;
+    root.style.setProperty('--sy', String(Math.min(window.scrollY || 0, 1600)));
+    var vh = window.innerHeight || 800;
+    pars.forEach(function(el){ var r = el.getBoundingClientRect(); var p = ((r.top + r.height/2) - vh/2) / vh; el.style.setProperty('--p', Math.max(-1.2, Math.min(1.2, p)).toFixed(4)); });
+  }
+  function onScroll(){ if (!raf) raf = requestAnimationFrame(update); }
+  window.addEventListener('scroll', onScroll, { passive:true }); window.addEventListener('resize', onScroll); update();
+
+  /* FAQ */
+  var fqs = root.querySelectorAll('.fq'), fN = document.getElementById('faqN'), fQ = document.getElementById('faqQ'), fA = document.getElementById('faqA');
+  fqs.forEach(function(b){
+    b.addEventListener('click', function(){
+      fqs.forEach(function(x){ x.classList.remove('act'); x.setAttribute('aria-pressed','false'); });
+      b.classList.add('act'); b.setAttribute('aria-pressed','true');
+      fN.textContent = pad(+b.dataset.i + 1); fQ.textContent = b.querySelector('span').textContent; fA.textContent = b.dataset.a;
+    });
+  });
+
+  /* Red neuronal del hero */
+  var cv = document.getElementById('mesh');
+  if (cv && cv.getContext){
+    var ctx = cv.getContext('2d'), host = cv.parentElement.parentElement;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var W = 0, H = 0, pts = [], dpr = Math.min(window.devicePixelRatio || 1, 2), mouse = { x:-9999, y:-9999 };
+    function size(){
+      W = cv.clientWidth; H = cv.clientHeight; if (!W || !H) return;
+      cv.width = W*dpr; cv.height = H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+      var n = Math.round(Math.min(90, (W*H)/16000)); pts = [];
+      for (var i = 0; i < n; i++) pts.push({ x:Math.random()*W, y:Math.random()*H, vx:(Math.random()-.5)*.28, vy:(Math.random()-.5)*.28 });
+    }
+    host.addEventListener('pointermove', function(e){ var r = cv.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; });
+    host.addEventListener('pointerleave', function(){ mouse.x = -9999; mouse.y = -9999; });
+    if ('ResizeObserver' in window) new ResizeObserver(size).observe(cv); else window.addEventListener('resize', size);
+    size();
+    var visible = true;
+    if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ visible = es[0].isIntersecting; }).observe(cv);
+    (function frame(){
+      requestAnimationFrame(frame);
+      if (!visible) return;
+      ctx.clearRect(0,0,W,H);
+      var i, j, a, b, d;
+      for (i = 0; i < pts.length; i++){
+        a = pts[i];
+        if (!reduce){ a.x += a.vx; a.y += a.vy; if (a.x < 0 || a.x > W) a.vx *= -1; if (a.y < 0 || a.y > H) a.vy *= -1; }
+        var dx = mouse.x - a.x, dy = mouse.y - a.y;
+        if (!reduce && Math.hypot(dx,dy) < 160){ a.x += dx*.006; a.y += dy*.006; }
+      }
+      for (i = 0; i < pts.length; i++){
+        a = pts[i];
+        for (j = i+1; j < pts.length; j++){
+          b = pts[j]; d = Math.hypot(a.x-b.x, a.y-b.y);
+          if (d < 140){
+            var near = Math.hypot(mouse.x-(a.x+b.x)/2, mouse.y-(a.y+b.y)/2) < 180;
+            ctx.strokeStyle = near ? 'rgba(34,211,238,'+(0.55*(1-d/140)).toFixed(3)+')' : 'rgba(129,140,248,'+(0.22*(1-d/140)).toFixed(3)+')';
+            ctx.lineWidth = near ? 1.1 : .7; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+          }
+        }
+        var md = Math.hypot(mouse.x-a.x, mouse.y-a.y);
+        ctx.fillStyle = md < 180 ? 'rgba(34,211,238,.95)' : 'rgba(165,180,252,.55)';
+        ctx.beginPath(); ctx.arc(a.x, a.y, md < 180 ? 2.2 : 1.5, 0, Math.PI*2); ctx.fill();
+      }
+    })();
+  }
+})();
+
+</script>
+</body>
+</html>
